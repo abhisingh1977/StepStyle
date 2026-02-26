@@ -23,6 +23,9 @@ app.use('/api/wallet', require('./routes/wallet'));
 app.use('/api/orders', require('./routes/orders'));
 
 app.get('/api/health', (req, res) => res.json({ status: 'ok', timestamp: new Date().toISOString() }));
+app.get("/", (req, res) => {
+    res.send("StepStyle Backend is Running 🚀");
+});
 
 // Error handler
 app.use((err, req, res, next) => {
