@@ -12,11 +12,17 @@ const app = express();
 
 // Middleware
 // app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }));
-app.use(helmet());
-app.use(cors());
-app.use(express.json({ limit: '10mb' }));
-app.use(cookieParser());
+// Middleware
+app.use(cors({
+    origin: true,
+    credentials: true
+}));
 
+app.options("*", cors());
+
+app.use(helmet());
+app.use(express.json({ limit: "10mb" }));
+app.use(cookieParser());
 // Routes
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/products', require('./routes/products'));
