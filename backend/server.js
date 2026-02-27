@@ -15,18 +15,18 @@ const app = express();
 ========================= */
 
 const allowedOrigins = [
-    "http://localhost:5173",
-    "http://localhost:3000",
+    // "http://localhost:5173",
+    // "http://localhost:3000/",
     "https://step-style-rho.vercel.app" // ⚠️ make sure this matches exactly
 ];
 
 app.use(cors({
     origin: "https://step-style-rho.vercel.app",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
+app.options("*", cors());
 app.options("*", cors({
     origin: "https://step-style-rho.vercel.app",
     credentials: true
