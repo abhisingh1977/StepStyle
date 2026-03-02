@@ -89,8 +89,9 @@ export default function OrdersPage() {
                             const status = statusConfig[order.status] || statusConfig.processing;
                             return (
                                 <motion.div key={order._id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
+                                    className="order-card"
                                     style={{
-                                        borderRadius: '20px', padding: '28px',
+                                        borderRadius: '20px',
                                         background: 'rgba(19,19,26,0.7)', border: '1px solid rgba(255,255,255,0.04)',
                                         backdropFilter: 'blur(20px)',
                                     }}
@@ -137,8 +138,7 @@ export default function OrdersPage() {
                                     </div>
 
                                     {/* Order Footer */}
-                                    <div style={{
-                                        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                    <div className="order-footer" style={{
                                         paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.04)',
                                     }}>
                                         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>

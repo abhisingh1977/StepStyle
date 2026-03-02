@@ -73,7 +73,7 @@ export default function LoginPage() {
                 transition={{ duration: 0.5 }}
                 style={{ position: 'relative', width: '100%', maxWidth: '440px' }}
             >
-                <div className="glass" style={{ borderRadius: '24px', padding: '48px 36px', boxShadow: '0 24px 48px rgba(0,0,0,0.3)' }}>
+                <div className="glass login-card" style={{ borderRadius: '24px', boxShadow: '0 24px 48px rgba(0,0,0,0.3)' }}>
                     {/* Logo */}
                     <div style={{ textAlign: 'center', marginBottom: '36px' }}>
                         <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginBottom: '24px', textDecoration: 'none' }}>

@@ -148,7 +148,7 @@ export default function ShopPage() {
 
                 {/* ═══════ PRODUCTS GRID ═══════ */}
                 {loading ? (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '24px' }}>
+                    <div className="grid-products">
                         {[...Array(8)].map((_, i) => (
                             <div key={i} style={{ background: '#13131a', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.04)' }}>
                                 <div style={{ aspectRatio: '1/1', background: '#1a1a25' }} className="shimmer" />
@@ -166,7 +166,7 @@ export default function ShopPage() {
                         <p style={{ color: '#6b7280', fontSize: '16px' }}>No products found in this category</p>
                     </div>
                 ) : (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '24px' }}>
+                    <div className="grid-products">
                         {products.map((p, i) => <ProductCard key={p._id} product={p} index={i} />)}
                     </div>
                 )}

@@ -138,7 +138,7 @@ export default function CartPage() {
             </section>
 
             <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '32px', alignItems: 'start' }}>
+                <div className="grid-cart">
 
                     {/* ═══════ LEFT PANEL (changes per step) ═══════ */}
                     <div>
@@ -150,11 +150,11 @@ export default function CartPage() {
                                     {cart.map((item) => {
                                         const discounted = Math.round(item.price * (1 - (item.discountPercent || 0) / 100));
                                         return (
-                                            <div key={item._id} style={{
-                                                display: 'flex', gap: '20px', padding: '24px', borderRadius: '20px',
+                                            <div className="cart-item" style={{
+                                                padding: '20px', borderRadius: '20px',
                                                 background: 'rgba(19,19,26,0.7)', border: '1px solid rgba(255,255,255,0.04)', backdropFilter: 'blur(20px)',
                                             }}>
-                                                <div style={{ width: '120px', height: '120px', borderRadius: '14px', overflow: 'hidden', background: '#1a1a25', flexShrink: 0 }}>
+                                                <div className="cart-item-img">
                                                     <img src={item.images?.[0] || 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300'} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                                 </div>
                                                 <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -205,7 +205,7 @@ export default function CartPage() {
                                         <h3 style={{ fontSize: '18px', fontWeight: 700, color: '#fff' }}>Delivery Address</h3>
                                     </div>
 
-                                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                                    <div className="grid-address">
                                         {[
                                             { key: 'name', label: 'Full Name', placeholder: 'John Doe', full: false },
                                             { key: 'phone', label: 'Phone Number', placeholder: '9876543210', full: false },
@@ -288,7 +288,7 @@ export default function CartPage() {
                     </div>
 
                     {/* ═══════ ORDER SUMMARY (always visible) ═══════ */}
-                    <div style={{ position: 'sticky', top: '88px' }}>
+                    <div className="sticky-desktop">
                         <div style={{
                             borderRadius: '20px', padding: '28px',
                             background: 'rgba(19,19,26,0.7)', border: '1px solid rgba(255,255,255,0.04)', backdropFilter: 'blur(20px)',

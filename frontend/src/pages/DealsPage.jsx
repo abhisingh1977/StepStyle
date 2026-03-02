@@ -45,8 +45,9 @@ export default function DealsPage() {
             <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
                 {/* ═══════ PROMO BANNER ═══════ */}
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+                    className="deals-banner"
                     style={{
-                        borderRadius: '20px', padding: '40px 32px', marginBottom: '40px',
+                        borderRadius: '20px', marginBottom: '40px',
                         background: 'rgba(19,19,26,0.7)', border: '1px solid rgba(255,255,255,0.04)',
                         backdropFilter: 'blur(20px)', position: 'relative', overflow: 'hidden',
                     }}
@@ -71,7 +72,7 @@ export default function DealsPage() {
 
                 {/* ═══════ DEALS GRID ═══════ */}
                 {loading ? (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '24px' }}>
+                    <div className="grid-products">
                         {[...Array(8)].map((_, i) => (
                             <div key={i} style={{ background: '#13131a', borderRadius: '20px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.04)' }}>
                                 <div style={{ aspectRatio: '1/1', background: '#1a1a25' }} className="shimmer" />
@@ -90,7 +91,7 @@ export default function DealsPage() {
                         <p style={{ color: '#4b5563', fontSize: '14px' }}>Check back soon for hot new offers!</p>
                     </div>
                 ) : (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '24px' }}>
+                    <div className="grid-products">
                         {deals.map((p, i) => <ProductCard key={p._id} product={p} index={i} />)}
                     </div>
                 )}

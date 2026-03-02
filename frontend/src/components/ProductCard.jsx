@@ -102,7 +102,7 @@ export default function ProductCard({ product, index = 0 }) {
                                 border: '1px solid rgba(255,255,255,0.1)',
                                 cursor: 'pointer', opacity: 0, transition: 'opacity 0.3s',
                             }}
-                            className="group-hover:!opacity-100"
+                            className="group-hover:!opacity-100 touch-visible"
                         >
                             {isWished ? <HiHeart style={{ color: '#ef4444', fontSize: '16px' }} /> : <HiOutlineHeart style={{ color: '#fff', fontSize: '16px' }} />}
                         </button>
@@ -119,7 +119,7 @@ export default function ProductCard({ product, index = 0 }) {
                                 color: '#fff', opacity: 0, transition: 'opacity 0.3s',
                                 boxShadow: '0 4px 16px rgba(124,58,237,0.3)',
                             }}
-                            className="group-hover:!opacity-100"
+                            className="group-hover:!opacity-100 touch-visible"
                         >
                             <HiShoppingBag style={{ fontSize: '14px' }} />
                             {added ? 'Added!' : 'Add to Cart'}
@@ -127,7 +127,7 @@ export default function ProductCard({ product, index = 0 }) {
                     </div>
 
                     {/* Product Info */}
-                    <div style={{ padding: '20px' }}>
+                    <div className="product-card-info">
                         {/* Brand */}
                         <p style={{ fontSize: '11px', fontWeight: 600, color: '#a78bfa', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '6px' }}>
                             {product.brand}

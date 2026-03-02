@@ -101,7 +101,7 @@ export default function LandingPage() {
                     </motion.div>
 
                     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }}
-                        style={{ display: 'flex', justifyContent: 'center', gap: '48px' }}>
+                        className="hero-stats">
                         {[{ n: '50K+', l: 'Steps Tracked' }, { n: '10K+', l: 'Coins Earned' }, { n: '500+', l: 'Products' }].map((s, i) => (
                             <div key={i} style={{ textAlign: 'center' }}>
                                 <p style={{ fontSize: '24px', fontWeight: 700, color: '#fff' }}>{s.n}</p>
@@ -121,7 +121,8 @@ export default function LandingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
-                    style={{ maxWidth: '1280px', margin: '0 auto', padding: '100px 24px 60px' }}>
+                    style={{ maxWidth: '1280px', margin: '0 auto' }}
+                    className="section-pad">
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '40px' }}>
                         <div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -134,7 +135,7 @@ export default function LandingPage() {
                             View All <RiArrowRightLine />
                         </Link>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px' }}>
+                    <div className="grid-products">
                         {trending.slice(0, 6).map((p, i) => <ProductCard key={p._id} product={p} index={i} />)}
                     </div>
                 </motion.section>
@@ -147,7 +148,8 @@ export default function LandingPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: '-80px' }}
                     transition={{ duration: 0.6, ease: 'easeOut', delay: 0.1 }}
-                    style={{ maxWidth: '1280px', margin: '0 auto', padding: '60px 24px' }}>
+                    style={{ maxWidth: '1280px', margin: '0 auto', padding: '60px 16px' }}
+                    className="sm:!px-6">
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '40px' }}>
                         <div>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
@@ -160,7 +162,7 @@ export default function LandingPage() {
                             View All <RiArrowRightLine />
                         </Link>
                     </div>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px' }}>
+                    <div className="grid-products">
                         {newArrivals.slice(0, 8).map((p, i) => <ProductCard key={p._id} product={p} index={i} />)}
                     </div>
                 </motion.section>
@@ -172,12 +174,13 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
-                style={{ maxWidth: '1280px', margin: '0 auto', padding: '100px 24px' }}>
+                style={{ maxWidth: '1280px', margin: '0 auto' }}
+                className="section-pad">
                 <div style={{ textAlign: 'center', marginBottom: '56px' }}>
                     <span style={{ fontSize: '13px', fontWeight: 600, color: '#4ade80', textTransform: 'uppercase', letterSpacing: '0.1em' }}>How It Works</span>
                     <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#fff', marginTop: '12px' }}>Three Simple Steps</h2>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px', maxWidth: '960px', margin: '0 auto' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px', maxWidth: '960px', margin: '0 auto' }}>
                     {[
                         { icon: RiFootprintFill, title: 'Walk', desc: 'Track your daily steps with the StepStyle mobile app. Every step counts towards your rewards.', color: '#a78bfa', bg: 'rgba(124,58,237,0.12)', num: '01' },
                         { icon: RiCoinsFill, title: 'Earn Coins', desc: 'Convert your steps into StepStyle coins. The more you walk, the more coins you earn.', color: '#facc15', bg: 'rgba(234,179,8,0.12)', num: '02' },
@@ -206,12 +209,13 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
-                style={{ maxWidth: '1280px', margin: '0 auto', padding: '100px 24px' }}>
+                style={{ maxWidth: '1280px', margin: '0 auto' }}
+                className="section-pad">
                 <div style={{ textAlign: 'center', marginBottom: '56px' }}>
                     <span style={{ fontSize: '13px', fontWeight: 600, color: '#a78bfa', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Rewards & Levels</span>
                     <h2 style={{ fontSize: 'clamp(1.75rem, 3vw, 2.5rem)', fontWeight: 700, color: '#fff', marginTop: '12px' }}>Level Up Your Rewards</h2>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '16px', maxWidth: '1000px', margin: '0 auto' }}>
+                <div className="grid-levels" style={{ maxWidth: '1000px', margin: '0 auto' }}>
                     {levels.map((lvl, i) => (
                         <motion.div key={i}
                             initial={{ opacity: 0, y: 25, scale: 0.95 }}
@@ -244,8 +248,9 @@ export default function LandingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
-                style={{ maxWidth: '1280px', margin: '0 auto', padding: '100px 24px 140px' }}>
-                <div className="glass" style={{ borderRadius: '24px', padding: '80px 40px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+                style={{ maxWidth: '1280px', margin: '0 auto', padding: '60px 16px 100px' }}
+                className="sm:!px-6">
+                <div className="glass cta-glass" style={{ borderRadius: '24px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(74,222,128,0.05))' }} />
                     <div style={{ position: 'absolute', top: 0, right: 0, width: '256px', height: '256px', background: 'rgba(124,58,237,0.1)', borderRadius: '50%', filter: 'blur(100px)' }} />
                     <div style={{ position: 'absolute', bottom: 0, left: 0, width: '256px', height: '256px', background: 'rgba(74,222,128,0.05)', borderRadius: '50%', filter: 'blur(100px)' }} />

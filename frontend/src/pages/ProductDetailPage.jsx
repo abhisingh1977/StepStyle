@@ -67,7 +67,7 @@ export default function ProductDetailPage() {
             </section>
 
             <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '56px', alignItems: 'start' }}>
+                <div className="grid-product-detail">
 
                     {/* ═══════ PRODUCT IMAGE ═══════ */}
                     <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} style={{ position: 'relative' }}>
@@ -210,7 +210,7 @@ export default function ProductDetailPage() {
                         </button>
 
                         {/* Info Bar */}
-                        <div style={{ display: 'flex', justifyContent: 'center', gap: '24px', marginTop: '20px' }}>
+                        <div className="info-bar" style={{ marginTop: '20px' }}>
                             {['Free Shipping', 'Easy Returns', 'Secure Payment'].map((info, i) => (
                                 <span key={i} style={{ fontSize: '12px', color: '#4b5563', display: 'flex', alignItems: 'center', gap: '4px' }}>
                                     <span style={{ color: '#4ade80' }}>✓</span> {info}
