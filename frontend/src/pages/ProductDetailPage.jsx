@@ -49,7 +49,7 @@ export default function ProductDetailPage() {
     return (
         <div style={{ minHeight: '100vh', paddingBottom: '64px' }}>
             {/* ═══════ PAGE HEADER ═══════ */}
-            <section style={{ padding: '48px 24px 32px', maxWidth: '1280px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.04)', marginBottom: '48px' }}>
+            <section style={{ padding: '48px 16px 32px', maxWidth: '1280px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.04)', marginBottom: '48px' }} className="sm:!px-6">
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                         <Link to="/shop/men" style={{ fontSize: '13px', color: '#6b7280', textDecoration: 'none' }}>Home</Link>
@@ -66,7 +66,7 @@ export default function ProductDetailPage() {
                 </motion.div>
             </section>
 
-            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }} className="sm:!px-6">
                 <div className="grid-product-detail">
 
                     {/* ═══════ PRODUCT IMAGE ═══════ */}

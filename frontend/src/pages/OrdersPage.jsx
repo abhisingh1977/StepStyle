@@ -35,7 +35,7 @@ export default function OrdersPage() {
     return (
         <div style={{ minHeight: '100vh', paddingBottom: '64px' }}>
             {/* ═══════ PAGE HEADER ═══════ */}
-            <section style={{ padding: '48px 24px 40px', maxWidth: '1280px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.04)', marginBottom: '40px' }}>
+            <section style={{ padding: '48px 16px 40px', maxWidth: '1280px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.04)', marginBottom: '40px' }} className="sm:!px-6">
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
                         <Link to="/" style={{ fontSize: '13px', color: '#6b7280', textDecoration: 'none' }}>Home</Link>
@@ -60,7 +60,7 @@ export default function OrdersPage() {
                 </motion.div>
             </section>
 
-            <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 16px' }} className="sm:!px-6">
                 {orders.length === 0 ? (
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
                         style={{

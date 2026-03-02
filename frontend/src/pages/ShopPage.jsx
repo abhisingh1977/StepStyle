@@ -37,11 +37,11 @@ export default function ShopPage() {
         <div style={{ minHeight: '100vh', paddingBottom: '64px' }}>
             {/* ═══════ SHOP HERO / HEADER ═══════ */}
             <section style={{
-                padding: '48px 24px 40px',
+                padding: '48px 16px 40px',
                 maxWidth: '1280px', margin: '0 auto',
                 borderBottom: '1px solid rgba(255,255,255,0.04)',
                 marginBottom: '32px',
-            }}>
+            }} className="sm:!px-6">
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
                     {/* Breadcrumb */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
@@ -73,7 +73,7 @@ export default function ShopPage() {
                 </motion.div>
             </section>
 
-            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }} className="sm:!px-6">
                 {/* ═══════ TOOLBAR ═══════ */}
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '32px', flexWrap: 'wrap', gap: '12px' }}>
                     <button

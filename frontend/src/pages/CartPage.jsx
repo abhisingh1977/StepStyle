@@ -101,7 +101,7 @@ export default function CartPage() {
     return (
         <div style={{ minHeight: '100vh', paddingBottom: '64px' }}>
             {/* Page Header */}
-            <section style={{ padding: '48px 24px 32px', maxWidth: '1280px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.04)', marginBottom: '40px' }}>
+            <section style={{ padding: '48px 16px 32px', maxWidth: '1280px', margin: '0 auto', borderBottom: '1px solid rgba(255,255,255,0.04)', marginBottom: '40px' }} className="sm:!px-6">
                 <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
                         <Link to="/" style={{ fontSize: '13px', color: '#6b7280', textDecoration: 'none' }}>Home</Link>
@@ -111,7 +111,7 @@ export default function CartPage() {
                     <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, color: '#fff', marginBottom: '24px' }}>Checkout</h1>
 
                     {/* ──── STEP INDICATOR ──── */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0', maxWidth: '500px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0', maxWidth: '500px', overflowX: 'auto' }}>
                         {STEPS.map((s, i) => (
                             <div key={s} style={{ display: 'flex', alignItems: 'center', flex: i < STEPS.length - 1 ? 1 : 'none' }}>
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: i < step ? 'pointer' : 'default' }}
@@ -126,7 +126,7 @@ export default function CartPage() {
                                     }}>
                                         {i < step ? <HiCheck style={{ fontSize: '14px' }} /> : i + 1}
                                     </div>
-                                    <span style={{ fontSize: '13px', fontWeight: i === step ? 600 : 400, color: i <= step ? '#fff' : '#6b7280', whiteSpace: 'nowrap' }}>{s}</span>
+                                    <span style={{ fontSize: '12px', fontWeight: i === step ? 600 : 400, color: i <= step ? '#fff' : '#6b7280', whiteSpace: 'nowrap' }} className="sm:!text-[13px]">{s}</span>
                                 </div>
                                 {i < STEPS.length - 1 && (
                                     <div style={{ flex: 1, height: '2px', margin: '0 12px', background: i < step ? '#7c3aed' : 'rgba(255,255,255,0.06)', borderRadius: '2px', transition: 'background 0.3s' }} />
@@ -137,7 +137,7 @@ export default function CartPage() {
                 </motion.div>
             </section>
 
-            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
+            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 16px' }} className="sm:!px-6">
                 <div className="grid-cart">
 
                     {/* ═══════ LEFT PANEL (changes per step) ═══════ */}

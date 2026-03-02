@@ -42,7 +42,7 @@ export default function LandingPage() {
     return (
         <div style={{ overflowX: 'hidden' }}>
             {/* ═══════════ HERO SECTION ═══════════ */}
-            <section ref={heroRef} style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+            <section ref={heroRef} style={{ position: 'relative', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '60px 0 40px' }}>
                 <div className="hero-bg" style={{ position: 'absolute', inset: 0 }}>
                     <img src="https://images.unsplash.com/photo-1571008887538-b36bb32f4571?w=1920&q=80" alt="Runner" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.25 }} />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,15,0.7), rgba(10,10,15,0.8), #0a0a0f)' }} />
@@ -67,7 +67,7 @@ export default function LandingPage() {
                 </div>
 
                 {/* Hero Content */}
-                <div style={{ position: 'relative', zIndex: 5, maxWidth: '900px', margin: '0 auto', padding: '0 24px', textAlign: 'center' }}>
+                <div style={{ position: 'relative', zIndex: 5, maxWidth: '900px', margin: '0 auto', padding: '0 16px', textAlign: 'center' }} className="sm:!px-6">
                     <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
                         className="glass" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '10px 20px', borderRadius: '9999px', marginBottom: '32px' }}>
                         <HiSparkles style={{ color: '#facc15' }} />
@@ -82,19 +82,19 @@ export default function LandingPage() {
                     </motion.h1>
 
                     <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7, duration: 0.6 }}
-                        style={{ fontSize: '18px', color: '#9ca3af', maxWidth: '560px', margin: '0 auto 48px', lineHeight: 1.7 }}>
+                        style={{ fontSize: 'clamp(14px, 3vw, 18px)', color: '#9ca3af', maxWidth: '560px', margin: '0 auto 32px', lineHeight: 1.7, padding: '0 8px' }} className="sm:!mb-12">
                         Every step you take earns you coins. Redeem them for real discounts on premium products. Your fitness journey just became your shopping advantage.
                     </motion.p>
 
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1 }}
                         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '16px', marginBottom: '64px' }}>
                         <Link to="/login">
-                            <button style={{ minWidth: '220px', padding: '18px 48px', borderRadius: '16px', background: 'linear-gradient(to right, #7c3aed, #6d28d9)', color: '#fff', fontWeight: 700, fontSize: '18px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', boxShadow: '0 20px 40px rgba(124,58,237,0.25)' }}>
+                            <button style={{ width: '100%', minWidth: '180px', maxWidth: '280px', padding: '14px 32px', borderRadius: '14px', background: 'linear-gradient(to right, #7c3aed, #6d28d9)', color: '#fff', fontWeight: 700, fontSize: '16px', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', boxShadow: '0 20px 40px rgba(124,58,237,0.25)' }} className="sm:!py-[18px] sm:!px-12 sm:!text-lg sm:!rounded-2xl">
                                 Get Started <RiArrowRightLine style={{ fontSize: '20px' }} />
                             </button>
                         </Link>
                         <Link to="/login">
-                            <button className="glass" style={{ minWidth: '220px', padding: '18px 48px', borderRadius: '16px', color: '#fff', fontWeight: 700, fontSize: '18px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                            <button className="glass sm:!py-[18px] sm:!px-12 sm:!text-lg sm:!rounded-2xl" style={{ width: '100%', minWidth: '180px', maxWidth: '280px', padding: '14px 32px', borderRadius: '14px', color: '#fff', fontWeight: 700, fontSize: '16px', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
                                 <RiCoinsFill style={{ color: '#facc15', fontSize: '20px' }} /> Rewards
                             </button>
                         </Link>

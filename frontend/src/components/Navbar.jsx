@@ -44,15 +44,15 @@ export default function Navbar() {
             boxShadow: scrolled ? '0 8px 32px rgba(0,0,0,0.4)' : 'none',
             transition: 'all 0.4s ease',
         }}>
-            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '64px' }}>
+            <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 12px' }} className="sm:!px-6">
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '56px' }} className="sm:!h-16">
 
                     {/* Logo */}
-                    <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', flexShrink: 0 }}>
-                        <div style={{ width: '38px', height: '38px', borderRadius: '12px', background: 'linear-gradient(135deg, #7c3aed, #5b21b6)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 16px rgba(124,58,237,0.3)' }}>
-                            <RiFootprintFill style={{ color: '#fff', fontSize: '18px' }} />
+                    <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', flexShrink: 0 }}>
+                        <div style={{ width: '32px', height: '32px', borderRadius: '10px', background: 'linear-gradient(135deg, #7c3aed, #5b21b6)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 16px rgba(124,58,237,0.3)' }} className="sm:!w-[38px] sm:!h-[38px] sm:!rounded-xl">
+                            <RiFootprintFill style={{ color: '#fff', fontSize: '16px' }} />
                         </div>
-                        <span style={{ fontSize: '20px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }}>
+                        <span style={{ fontSize: '18px', fontWeight: 800, color: '#fff', letterSpacing: '-0.02em' }} className="sm:!text-xl">
                             Step<span style={{ color: '#4ade80' }}>Style</span>
                         </span>
                     </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Right Actions */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', flexShrink: 0 }} className="sm:!gap-2">
 
                         {/* Coin Balance */}
                         <div style={{
@@ -220,9 +220,31 @@ export default function Navbar() {
                         style={{ overflow: 'hidden', background: 'rgba(10,10,15,0.95)', backdropFilter: 'blur(24px)', borderTop: '1px solid rgba(255,255,255,0.05)' }}
                     >
                         <div style={{ padding: '12px 16px' }}>
+                            {/* Mobile Coins & Level */}
+                            <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', paddingBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
+                                <div style={{
+                                    flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+                                    padding: '10px', borderRadius: '12px',
+                                    background: 'linear-gradient(135deg, rgba(234,179,8,0.08), rgba(234,179,8,0.04))',
+                                    border: '1px solid rgba(234,179,8,0.15)',
+                                }}>
+                                    <RiCoinsFill style={{ color: '#facc15', fontSize: '14px' }} />
+                                    <span style={{ color: '#fde68a', fontSize: '14px', fontWeight: 700 }}>{user.coins?.toLocaleString() || 0}</span>
+                                    <span style={{ color: '#6b7280', fontSize: '11px' }}>coins</span>
+                                </div>
+                                <div style={{
+                                    flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px',
+                                    padding: '10px', borderRadius: '12px',
+                                    background: 'linear-gradient(135deg, rgba(124,58,237,0.1), rgba(124,58,237,0.05))',
+                                    border: '1px solid rgba(124,58,237,0.15)',
+                                }}>
+                                    <span style={{ fontSize: '12px' }}>⚡</span>
+                                    <span style={{ color: '#a78bfa', fontSize: '14px', fontWeight: 600 }}>Lvl {user.level || 1}</span>
+                                </div>
+                            </div>
                             {navLinks.map((link) => (
                                 <Link key={link.name} to={link.path} style={{
-                                    display: 'block', padding: '12px 16px', borderRadius: '12px', fontSize: '14px', fontWeight: 500,
+                                    display: 'block', padding: '12px 16px', borderRadius: '12px', fontSize: '15px', fontWeight: 500,
                                     color: location.pathname === link.path ? '#4ade80' : '#d1d5db', textDecoration: 'none',
                                     background: location.pathname === link.path ? 'rgba(74,222,128,0.06)' : 'transparent',
                                 }}>
